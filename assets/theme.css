@@ -7013,6 +7013,48 @@ div.featured-product-container{
   white-space: nowrap;
 }
 
+div.featured-product-wrap a#featured-product-atc{
+  position: relative;
+  background-color:#876cfd;
+  color:#fff;
+  display: inline-block;
+  border:3px solid #876cfd;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  -webkit-transition: all 0.33s ease;
+  -moz-transition: all 0.33s ease;
+  -o-transition: all 0.33s ease;
+}
+
+div.featured-product-wrap a#featured-product-atc span{
+  padding: 8px 20px;
+  display: inline-block;
+}
+
+div.featured-product-wrap a#featured-product-atc:hover{
+  background-color:#fff;
+  color:#876cfd;
+}
+
+a#featured-product-atc .anchor-fold {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #8e7ed8;
+  transform: rotate(271deg);
+}
+
+a#featured-product-atc .anchor-fold .anchor-fold-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #6c56cb transparent transparent;
+}
 
 @media (min-width:767px){
   div.featured-product-wrap{
