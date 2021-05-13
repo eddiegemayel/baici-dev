@@ -6,11 +6,13 @@
     <div class="featured-product-container">
     {% for product in collections[choosen-collection].products %}
         <div class="featured-product-wrap">
-            <div class="featured-products-image">
-                <img src="{{ product.featured_image.src | img_url: 'large' }}" />
+            <a href="{{ product.url }}">
+                <div class="featured-products-image">
+                    <img src="{{ product.featured_image.src | img_url: 'large' }}" />
+                </div>
                 <p class="featured-product-price">{{ product.price | money }}</p>
                 <p class="featured-product-title">{{ product.title }}</p>
-            </div>
+            </a>
         </div>
     {% endfor %}
     </div>
