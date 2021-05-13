@@ -1,0 +1,23 @@
+<div class="page-width featured-products-section">
+    <h1>Featured Products</h1>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+        {
+            "type": "collection",
+            "id": "featured-collection",
+            "label": "Select a Collection"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Product",
+            "name": "Featured Products"
+        }
+    ]
+}
+
+{% endschema %}
