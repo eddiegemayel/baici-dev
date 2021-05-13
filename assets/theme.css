@@ -7014,6 +7014,7 @@ div.featured-product-container{
 }
 
 div.featured-product-wrap a#featured-product-atc{
+  cursor: pointer;
   position: relative;
   background-color:#876cfd;
   color:#fff;
