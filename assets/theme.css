@@ -6996,3 +6996,14 @@ hr {
 
 .store-availability-list__phone {
   margin-bottom: 0; }
+
+/*================================
+==================================
+CUSTOM STYLES
+==================================
+================================*/
+div.featured-product-wrap{
+  width: 25%;
+  display: inline-block;
+  float: left;
+}

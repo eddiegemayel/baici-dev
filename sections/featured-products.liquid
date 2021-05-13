@@ -1,10 +1,16 @@
 <div id="shopify-section-{{ section.id }}" class="page-width featured-products-section">
-    <h1>Featured Products</h1>
+    <h1>{{ section.settings.featured-collection-heading }}</h1>
 
     {% assign choosen-collection = section.settings.featured-collection %}
 
     {% for product in collections[choosen-collection].products %}
-        {{ product.title }}
+        <div class="featured-product-wrap">
+            <div class="featured-products-image">
+                <img src="{{ product.featured_image.src | img_url: 'large' }}" />
+                <p class="featured-product-price">{{ product.price | money }}</p>
+                <p class="featured-product-title">{{ product.title }}</p>
+            </div>
+        </div>
     {% endfor %}
 
 </div>
@@ -13,6 +19,11 @@
 {
   "name": "Featured Products",
   "settings": [
+        {
+            "type": "text",
+            "id": "featured-collection-heading",
+            "label": "Heading"
+        },
         {
             "type": "collection",
             "id": "featured-collection",
