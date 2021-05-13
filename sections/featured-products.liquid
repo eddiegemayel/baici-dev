@@ -16,7 +16,7 @@
             </a>
             <p class="featured-product-price">{{ product.price | money }}</p>
 
-            <a type="submit" name="add" id="featured-product-atc" value="Add To Cart">
+            <a id="featured-product-atc" value="Add To Cart" class="ajax-submit-btn" data-prod-id="{{ product.variants.first.id }}" data-name="{{ product.title | handleize }}">
                 <span>Add to Cart</span>
                 <div class="anchor-fold">
                     <div class="anchor-fold-triangle"></div>
@@ -28,6 +28,51 @@
     </div>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+
+      $(document).ready(function(){   
+
+        //when add to cart is clicked
+        $('.ajax-submit-btn').click(function(){
+
+          //grab product's Id (the VARIANT id not the product id)
+          var productID = $(this).attr("data-prod-id");
+
+          //run the call
+          addItemToCart(productID, 1); 
+
+        });
+      });// end of document ready wrap
+
+
+        //add to cart ajax call 
+        function addItemToCart(variant_id, qty) {
+
+            //take in arguments, pass them into data json
+            data = {
+              "id": variant_id,
+              "quantity": qty
+            }
+
+            //make the call
+            $.ajax({
+              type: 'POST',
+              url: '/cart/add',
+              data: data,
+              dataType: 'json',
+              success: function() { 
+                console.log('success');
+              },
+              error: function() { 
+                alert("Error. Oh no!");
+              }
+            });
+        }// end of call
+
+    </script>
 
 {% schema %}
 {
