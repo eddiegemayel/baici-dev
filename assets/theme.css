@@ -7003,7 +7003,19 @@ CUSTOM STYLES
 ==================================
 ================================*/
 div.featured-product-wrap{
-  width: 25%;
-  display: inline-block;
+  width: 50%;
   float: left;
+  white-space: normal;
+}
+
+div.featured-product-container{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+@media (min-width:767px){
+  div.featured-product-wrap{
+    width: 25%;
+  }
 }
